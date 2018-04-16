@@ -8,7 +8,7 @@
 ##
 ## @enumerate
 ## @item somfy frame start time
-## @item somfy payload start time % FIXME THIS IS BROKEN (too late value)
+## @item somfy payload start time
 ## @item somfy payload end time
 ## @item somfy frame type: 1 = normal frame, 2 = repeat frame
 ## @end enumerate
@@ -37,8 +37,6 @@ function offsets = findSomfy(y, verbose)
   end
 
   offsets = [];
-
-  % search for a sequence of pulses
 
   HW_SYNC = [
     2.47e-3, % hw sync (1)
@@ -167,8 +165,6 @@ function offsets = findSomfy(y, verbose)
         if (verbose >= 1)
           fprintf("sequence #%d end matched at offset %d\n", seqIdx, idx);
         end
-
-        # FIXME FIXME
         offsets = [offsets; y(matchStartIdx, 1), y(matchStartIdx + matchLen - 1, 1) + headerDeltaT, y(idx, 1), seqIdx];
 
         % search for next...
