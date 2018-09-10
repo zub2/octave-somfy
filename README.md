@@ -1,5 +1,7 @@
 # Octave-Somfy
 
+**Development moved to [https://gitlab.com/zub2/octave-somfy](https://gitlab.com/zub2/octave-somfy)**
+
 This repository contains [GNU Octave](https://www.gnu.org/software/octave/) functions that can decode the Somfy RTS Protocol. This implementation is based in the description available at the [Pushstack blog](https://pushstack.wordpress.com/somfy-rts-protocol/).
 
 The input data can come from several sources:
